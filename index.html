@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Avinash Bayanaboina - Portfolio</title>
+  <!-- Devicon CSS for language icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <!-- Font Awesome CSS for contact and social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: radial-gradient(circle at 50% 30%, #22253c 62%, #222 95%);
+      color: #fff;
+      min-height: 100vh;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      background: rgba(32,36,56,0.85);
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #2a2a42;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.04em;
+      letter-spacing: 0.5px;
+      margin: 0 10px;
+      padding: 2px 8px;
+      transition: color 0.18s;
+    }
+    nav a:hover, nav a.active {
+      color: #90ee90;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 32px;
+      background: none;
+      padding: 56px 60px 32px 60px;
+    }
+    @media (max-width: 750px) {
+      header { flex-direction: column; align-items: flex-start; gap: 16px; padding: 32px 10vw 16px 10vw;}
+    }
+    .profile-pic-container {
+      align-self: flex-start;
+      margin-left: auto;
+    }
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 5px solid #90ee90;
+      object-fit: cover;
+      background: #fff;
+      margin-left: 24px;
+    }
+    .intro {
+      flex: 1;
+    }
+    .intro h1 {
+      margin: 0 0 8px 0;
+      font-weight: 600;
+      font-size: 2.25em;
+    }
+    .subtitle {
+      color: #90ee90;
+      font-size: 1.13em;
+      margin-bottom: 0.7em;
+      font-weight: 500;
+    }
+    .section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px 32px;
+      background: rgba(44,62,80,0.87);
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(33,45,56,0.13);
+    }
+    .section h2 {
+      margin-top: 0;
+      font-size: 1.7em;
+      margin-bottom: 0.5em;
+      color: #90ee90;
+      font-weight: 600;
+    }
+    .section .emph {
+      color: #90ee90; 
+    }
+    .about-content {
+      font-size: 1.09em;
+      line-height: 1.7;
+      margin-top: 9px;
+    }
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 34px;
+      margin: 24px 0;
+      justify-content: center;
+    }
+    .skill-item {
+      background: rgba(60,63,81,0.55);
+      border-radius: 10px;
+      padding: 20px 30px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(12,20,33,0.07);
+      font-size: 1.04em;
+      min-width: 110px;
+      transition: transform 0.17s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .skill-item i {
+      font-size: 2em;
+      vertical-align: middle;
+    }
+    .skill-item:hover {
+      transform: translateY(-5px) scale(1.055);
+      background: #232b3a;
+    }
+    /* Education */
+    .edu-box {
+      background: rgba(26, 40, 52, 0.66);
+      border-radius: 12px;
+      padding: 2em;
+      text-align: center;
+      margin: 20px auto 0 auto;
+      box-shadow: 0 2px 16px rgba(20,30,40,0.09);
+      font-size: 1.16em;
+    }
+    /* Contact Section */
+    #contact.section {
+      padding: 36px 21px 30px 21px;
+    }
+    .contact-profile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 26px;
+      margin-top: 18px;
+    }
+    .contact-avatar {
+      width: 94px;
+      height: 94px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #90ee90;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .contact-details {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      line-height: 2.1;
+    }
+    .contact-details li {
+      font-size: 1.1em;
+      margin-bottom: 0.2em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .contact-details i {
+      font-size: 1.17em;
+      color: #90ee90;
+      width: 1.6em;
+      min-width: 1.6em;
+      text-align: center;
+    }
+    .social-links {
+      display: flex;
+      gap: 20px;
+      margin-top: 18px;
+    }
+    .social-links a {
+      color: #90ee90;
+      background: #242c3d;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      font-size: 1.6em;
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      background: #90ee90;
+      color: #222;
+    }
+    @media (max-width: 650px) {
+      .skills-list {flex-direction: column;}
+      .contact-profile { flex-direction: column; gap: 16px; align-items: flex-start;}
+      header { flex-direction: column;}
+      .social-links {justify-content: flex-start;}
+    }
+    .section:not(:last-child) {border-bottom: 1px solid #283246;}
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Header -->
+  <header id="home">
+    <div class="intro">
+      <h1>Avinash Bayanaboina</h1>
+      <div class="subtitle">And I'm a <span style="color:#91e191">Software Engineer</span></div>
+    </div>
+    <div class="profile-pic-container">
+      <img src="Profile photo.svg" alt="Avinash Bayanaboina" class="profile-pic">
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <h2>About <span class="emph">Me</span></h2>
+    <div class="about-content">
+      I'm an enthusiastic computer science engineering student from Vell Tech University, Chennai, with a strong grounding in C language, Java, Python, HTML, CSS, and JavaScript. My professional interests include full-stack development, data structures, and problem-solving.
+      <br><br>
+      Energetic &amp; quick to adapt, I thrive in team environments and am always eager to learn new technologies. I have hands-on experience working on both technical and personal software development projects, where I've worked on dynamic website applications, actively seeking internships opportunities to use my knowledge foundations in practical settings. I’m passionate about leveraging my skills in building impactful solutions and continuously striving to enhance my knowledge, both technically and professionally.
+    </div>
+  </section>
+
+  <!-- Skills Section with icons -->
+  <section class="section" id="skills">
+    <h2>My <span class="emph">Skills</span></h2>
+    <div class="skills-list">
+      <div class="skill-item">
+        <i class="devicon-c-plain colored" title="C"></i> C
+      </div>
+      <div class="skill-item">
+        <i class="devicon-java-plain colored" title="Java"></i> JAVA
+      </div>
+      <div class="skill-item">
+        <i class="devicon-mysql-plain colored" title="SQL"></i> SQL
+      </div>
+      <div class="skill-item">
+        <i class="devicon-python-plain colored" title="Python"></i> PYTHON
+      </div>
+    </div>
+    <div style="margin-top: 12px; font-size:1.05em; color:#cfd8dc; text-align: center;">
+      I have experience with data structures & algorithm design in Java, Python, and C, as well as full-stack development using HTML, CSS, and JavaScript. My passion lies in learning new languages and building real-world applications.
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="section" id="education">
+    <h2>Education</h2>
+    <div class="edu-box">
+      <strong>Bachelor of Technology (CSE)</strong><br>
+      Vel Tech University (2023–2027)<br>
+      Avadi, Chennai, Tamil Nadu<br>
+      <span style="color:#90ee90; font-size:0.95em;">CGPA-8.5</span>
+    </div>
+  </section>
+
+  <!-- Contact Section with icons and social links -->
+  <section class="section" id="contact">
+    <h2>Contact <span class="emph">Me!</span></h2>
+    <div class="contact-profile">
+      
+      <ul class="contact-details">
+        <li>
+          <i class="fas fa-envelope"></i>
+          <strong>Email:</strong> avinashyadavbayanaboina@gmail.com
+        </li>
+        <li>
+          <i class="fas fa-phone"></i>
+          <strong>Mobile:</strong> +91 8328145758
+        </li>
+        <li>
+          <i class="fas fa-location-dot"></i>
+          <strong>Location:</strong> Badvel, Kadapa, Andhra Pradesh, India
+        </li>
+      </ul>
+    </div>
+    <!-- Social Links -->
+    <div class="social-links">
+      <a href="https://github.com/AvinashBayanaboina" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/avinash-yadav-bayanaboina-22b387376" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </section>
+</body>
+</html>
